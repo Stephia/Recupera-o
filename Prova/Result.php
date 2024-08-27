@@ -11,18 +11,37 @@
         $frase = $_GET['frase'];
         echo $frase . "<br>";
 
+        echo "<h3>Transforme a frase em letras maiúsculas</h3>";
         $UP = Strtoupper($frase);
         echo $UP . "<br>";
 
-        
+        echo "<h3>Exiba qual é caractere que está na posição do meio da frase</h3>";
+        $meio = $frase[intval(strlen($frase)/2)];
+        echo $meio . "<br>";
+
+        echo "<h3>Troque todas as vogais pela letra X</h3>";
+        $vogais = array("a","e","i","o","E");
+        print_r(str_replace($vogais,"x",$frase) . "<br>");
+
+        echo "<h3>Exiba quantidade caracteres que não são vogais</h3>";
+        $tamanho = str_replace($vogais,"",$frase);
+        echo strlen($tamanho) . "<br>";
+
+        echo "<h3>Crie uma nova frase a partir da letra 'd'</h3>";
+        $nova = substr($frase, 10, 32);
+        echo $nova . "<br>";
+
+        echo "<h3>Exiba a frase de forma inversa</h3>";
+        echo strrev($nova) . "<br>";
+
+        $partes = explode(" ", $nova);
+        $parte1 = $partes[4];
+        $parte2 = $partes[3];
+        $parte3 = $partes[2];
+        $parte4 = $partes[1];
+        $parte5 = $partes[0];
+        $reverse = $parte1 . " " . $parte2 . " " . $parte3 . " " . $parte4 . " " . $parte5 . "<br>";
+        echo $reverse;
     ?>
 </body>
 </html>
-Crie um script PHP que receba a seguinte frase: “Esta prova de PHP esta molezinha.”, ¬/
-                                                 012345678910
-transforme a frase em letras maiúsculas, ¬/
-exiba qual é caractere que está na posição do meio da frase.  
-Troque todas as vogais pela letra X e
-exiba quantidade caracteres que não são vogais.
-Crie uma nova frase a partir da letra ”d” e
-exiba a frase de forma inversa.
